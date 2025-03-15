@@ -33,10 +33,13 @@ document.addEventListener("DOMContentLoaded", () => {
     editBtn.classList.add("edit-btn");
     editBtn.addEventListener("click", () => editTask(task));
 
-    li.textContent = `${task} `;
+    li.textContent = task;
     li.appendChild(editBtn);
     li.appendChild(deleteBtn);
     taskList.appendChild(li);
+
+    console.log("Updated task list:", taskList.innerHTML); // Check if tasks are added
+
   }
 
   function handleDelete(e) {
@@ -74,4 +77,5 @@ document.addEventListener("DOMContentLoaded", () => {
       loadTasks(); // Reload tasks from storage
     }
   }
+
 
